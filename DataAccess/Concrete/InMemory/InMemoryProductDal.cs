@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -39,9 +41,14 @@ namespace DataAccess.Concrete.InMemory
             //    {
             //        producttodelete = p;
             //    }
-            //}Bir sonraki satır bütün bu işlemleri yapıyor LİNQ sayesinde
+            //}Bir sonraki satır bütün bu işlemleri yapıyor "LİNQ" sayesinde
            Product productToDelete = _products.SingleOrDefault(p=>p.ProductId == product.ProductId);
             _products.Remove(productToDelete);
+        }
+
+        public Product Get(Expression<Func<Product, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Product> GetAll()
@@ -49,9 +56,19 @@ namespace DataAccess.Concrete.InMemory
             return _products;
         }
 
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Product> GetAllByCategory(int categoryId)
         {
             return _products.Where(p=>p.CategoryId == categoryId).ToList();
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Product product)
