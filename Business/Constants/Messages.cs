@@ -9,6 +9,6 @@ namespace Business.Constants
         public static string ProductAdded = "Product Added!";
         public static string ProductNameInvalid = "Product Name Invalid ";
         public static string ProductsListed = "All Products Listed";
-        internal static string MaintenanceTime = "Under Maintenance";
+        public static string MaintenanceTime = "Under Maintenance";
     }
 }
