@@ -18,3 +18,4 @@ namespace Core.CrossCuttingConcerns.Validation
         }
     }
 }
+
